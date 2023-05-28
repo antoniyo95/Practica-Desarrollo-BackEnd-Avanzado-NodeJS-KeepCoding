@@ -1,0 +1,32 @@
+<head>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css'>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<nav class="navbar is-mobile" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <span class="navbar-item-title">NodePOP</span>
+
+      <% getLocales().forEach(locale => { %>
+        <a class="navbar-item lang-link" href="/change-locale/<%= locale %>"><%= locale %></a>
+      <% }) %>
+
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarMenu" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/"><%=__('Inicio')%></a>
+      <a class="navbar-item" href="/about"><%=__('Acerca de')%></a>
+      <a class="navbar-item" href="#">Servicios</a>
+      <a class="navbar-item" href="#">Contacto</a>
+    </div>
+  </div>
+</nav>

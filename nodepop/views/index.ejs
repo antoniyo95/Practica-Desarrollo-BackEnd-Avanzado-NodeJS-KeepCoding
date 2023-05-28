@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NodePOP</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css'>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include header.ejs%>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">NodePOP</h1>
+        <p class="subtitle"> <%=__('¡Bienvenido al proyecto')%> <%=__('NodePOP') %> <%=__('para la práctica del curso Backend con NodeJS y MongoDB realizada por Antonio Luis Martínez Perales!')%></p>
+
+        <h2 class="title is-2"><%=__('Lista de Anuncios')%></h2>
+        <% anuncios.forEach(anuncio => { %>
+          <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="<%= anuncio.foto %>" alt="<%= anuncio.nombre %>">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <h3 class="title is-3"><%= anuncio.nombre %></h3>
+                  <p class="subtitle is-5">Precio: <%= anuncio.precio %>€</p>
+                  <p><%=__('Categorías')%>: <%= anuncio.tags %> </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+    
+    <% include footer.ejs%>
+    <script src="/javascripts/navbar.js"></script>
+  </body>
+</html>
