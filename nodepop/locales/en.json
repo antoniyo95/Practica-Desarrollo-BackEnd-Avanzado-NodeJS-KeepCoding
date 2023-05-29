@@ -9,5 +9,8 @@
 	"Contraseña": "Password",
 	"Entrar": "Sign In",
 	"Credenciales inválidas": "Invalid credentials",
-	"NodePOP": "NodePOP"
+	"NodePOP": "NodePOP",
+	"Email del usuario": "User email",
+	"Zona Privada": "Private Zone",
+	"Iniciar Sesión": "Log In"
 }

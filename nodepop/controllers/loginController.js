@@ -15,13 +15,17 @@ class LoginController {
       const usuario = await Usuario.findOne({ email: email });
 
       // Si no encuentra o no coincide la contraseña >>> Error
-      if (!usuario || usuario.password !== password) {
+      if (!usuario || !(await usuario.comparePassword(password))) {
         res.locals.error = req.__("Credenciales inválidas");
         res.locals.email = email;
         res.render("login");
         return;
       }
-      // Si existe y la contraseña coincide >>> Redirigir a Zona Privada
+      // Si existe y la contraseña coincide
+      // Apuntar en la sesión del usuario, que está autenticado
+      req.session.logedUser = usuario.id;
+
+      // Redirigir a Zona Privada
       res.redirect('/private');
     } catch (err) {
       next(err);

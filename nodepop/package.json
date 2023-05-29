@@ -8,11 +8,14 @@
     "initDB": "node ./bin/initDB"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^5.0.0",
     "cookie-parser": "~1.4.4",
     "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
     "i18n": "^0.15.1",
     "jsonwebtoken": "^9.0.0",
