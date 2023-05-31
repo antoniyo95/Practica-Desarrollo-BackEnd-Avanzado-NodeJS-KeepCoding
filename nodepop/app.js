@@ -41,7 +41,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 2 // Expira en 2 días de inactividad
   },
   store: MongoStore.create({
-    mongoUrl: 'mongodb://127.0.0.1:27017/nodepop'
+    mongoUrl: process.env.MONGODB_CONNECTION_SRT
   })
 }))
 

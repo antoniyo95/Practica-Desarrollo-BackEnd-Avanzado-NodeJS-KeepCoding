@@ -31,6 +31,11 @@ class LoginController {
       next(err);
     }
   }
+
+  login(req, res, next) {
+    req.session.regenerate()
+  }
+
 }
 
 module.exports = LoginController;

@@ -18,6 +18,12 @@ Start in development mode:
 npm run dev
 ```
 
+Copy .env.example to .env and customize your variables.
+
+```sh
+cp .env.example. .env
+```
+
 Start the server by deleting the content added to the database and loading some default ads:
 
 ```sh
