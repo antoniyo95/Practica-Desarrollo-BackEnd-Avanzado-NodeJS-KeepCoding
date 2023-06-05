@@ -51,12 +51,17 @@ const privateController = new PrivateController();
 /**
  * RUTAS DEL WEBSITE
  */
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+})
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/about", require("./routes/about"));
 app.use("/change-locale", require("./routes/change-locale"));
 app.get("/login", loginController.index);
 app.post("/login", loginController.post);
+app.get("/logout", loginController.logout);
 app.get("/private", sessionAuth, privateController.index);
 
 // catch 404 and forward to error handler

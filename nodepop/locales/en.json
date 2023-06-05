@@ -12,5 +12,7 @@
 	"NodePOP": "NodePOP",
 	"Email del usuario": "User email",
 	"Zona Privada": "Private Zone",
-	"Iniciar Sesión": "Log In"
+	"Cerrar sesión": "Logout",
+	"Iniciar sesión": "Login",
+	"Privado": "Private"
 }

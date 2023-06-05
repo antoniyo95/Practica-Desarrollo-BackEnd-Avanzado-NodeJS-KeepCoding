@@ -1,6 +1,28 @@
 <head>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css'>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtener todos los elementos "navbar-burger"
+      const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Verificar si hay elementos "navbar-burger"
+      if (navbarBurgers.length > 0) {
+        // Agregar eventos de clic a cada elemento "navbar-burger"
+        navbarBurgers.forEach((navbarBurger) => {
+          navbarBurger.addEventListener('click', () => {
+            // Obtener el objetivo del elemento "navbar-burger" según su atributo "data-target"
+            const target = navbarBurger.dataset.target;
+            const targetElement = document.getElementById(target);
+
+            // Alternar las clases "is-active" en tanto el elemento "navbar-burger" como el objetivo
+            navbarBurger.classList.toggle('is-active');
+            targetElement.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
 </head>
 
 <nav class="navbar is-mobile" role="navigation" aria-label="main navigation">
@@ -25,8 +47,14 @@
     <div class="navbar-end">
       <a class="navbar-item" href="/"><%=__('Inicio')%></a>
       <a class="navbar-item" href="/about"><%=__('Acerca de')%></a>
-      <a class="navbar-item" href="#">Servicios</a>
-      <a class="navbar-item" href="/login"><%= __('Iniciar Sesión') %></a>
+      <% if (session.logedUser) { %>
+      <a class="navbar-item" href="/private"><%= __('Privado')%></a>
+      <% } %>
+      <% if (session.logedUser) { %>
+        <a class="navbar-item" href="/logout"><%= __('Cerrar sesión') %></a>
+      <% } else { %>
+        <a class="navbar-item" href="/login"><%= __('Iniciar sesión') %></a>
+      <% } %>
     </div>
   </div>
 </nav>
