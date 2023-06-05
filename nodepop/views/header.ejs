@@ -51,9 +51,9 @@
       <a class="navbar-item" href="/private"><%= __('Privado')%></a>
       <% } %>
       <% if (session.logedUser) { %>
-        <a class="navbar-item" href="/logout"><%= __('Cerrar sesión') %></a>
+        <a class="navbar-item" id="logout" href="/logout"><%= __('Cerrar sesión') %></a>
       <% } else { %>
-        <a class="navbar-item" href="/login"><%= __('Iniciar sesión') %></a>
+        <a class="navbar-item" id="login" href="/login"><%= __('Iniciar sesión') %></a>
       <% } %>
     </div>
   </div>

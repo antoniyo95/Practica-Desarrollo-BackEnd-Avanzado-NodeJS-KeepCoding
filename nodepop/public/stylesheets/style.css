@@ -1,13 +1,13 @@
 /* Estilos para el cuerpo de la página */
 body {
-  background-color: #191825;
+  background-color: #f8f8f8;
   font-family: "Open Sans", sans-serif;
   margin-top: 3.2rem;
 }
 
 /* Estilos para los títulos */
 .title {
-  color: #e384ff;
+  color: #333333;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -15,16 +15,16 @@ body {
 
 /* Estilos para los subtítulos */
 .subtitle {
-  color: #e384ff;
+  color: #333333;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 /* Estilos para las cajas de los anuncios */
 .box {
-  background-color: #e384ff;
+  background-color: #ffffff;
   border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(48, 55, 66, 0.1);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
@@ -32,7 +32,7 @@ body {
 /* Estilos para las imágenes de los anuncios */
 .image {
   border-radius: 25%; /* para que la imagen sea un círculo */
-  box-shadow: 0 0.125rem 0.25rem rgba(48, 55, 66, 0.1);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
 .image img {
@@ -49,7 +49,7 @@ body {
 
 /* Estilos para las categorías de los anuncios */
 .content p {
-  color: #000000;
+  color: #333333;
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -59,12 +59,12 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #e384ff;
-  color: #865dff;
+  background-color: #40d7a7;
+  color: #ffffff;
 }
 
 .navbar-brand .navbar-item-title {
-  color: #865dff;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -72,15 +72,41 @@ body {
   color: #3273dc;
 }
 
-.navbar-end .navbar-item {
-  color: #865dff;
+.navbar-item {
+  color: #ffffff;
   font-weight: bold;
 }
+
+/* Estilos para los enlaces de Iniciar sesión y Cerrar sesión en la navbar */
+#login,
+#logout {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#login {
+  background-color: #3daa70;
+}
+
+#login:hover {
+  background-color: #a3ccb6;
+}
+
+#logout {
+  background-color: #ff0000;
+}
+
+#logout:hover {
+  background-color: #d87979;
+}
+
 
 /* Estilos para los enlaces selectores de idioma */
 .lang-link {
   margin-left: 1rem;
-  color: #865dff;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -90,26 +116,30 @@ body {
 
 /* Estilos para el menú desplegable de la navbar en mobile */
 .navbar-menu {
-  background-color: #ec9aff;
+  background-color: #40d7a7;
 }
 
 /* Estilos para el footer */
 .footer {
-  background-color: #e384ff;
-  color: #865dff;
+  background-color: #40d7a7;
+  color: #ffffff;
 }
 
 .footer-content {
-  color: #865dff;
+  color: #ffffff;
 }
 
 /* Estilos para el formulario */
-form {
+.form-container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 20px;
-  background-color: #800080;
-  color: #865dff;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 3rem; /* Margen superior */
+  margin-bottom: 3rem; /* Margen inferior */
 }
 
 .row {
@@ -125,14 +155,14 @@ input[type="password"] {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid #865dff;
+  border: 1px solid #333333;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #865dff;
-  color: #e384ff;
+  background-color: #40d7a7;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }

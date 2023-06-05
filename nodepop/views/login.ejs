@@ -1,20 +1,22 @@
 <% include header.ejs %>
 
-<form method="POST">
-  <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" name="email" value="<%= locals.email %>" class="form-control" id="inputEmail3" />
+<div class="form-container">
+  <form method="POST">
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" name="email" value="<%= locals.email %>" class="form-control" id="inputEmail3" />
+      </div>
     </div>
-  </div>
-  <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label"><%= __('Contraseña')%></label>
-    <div class="col-sm-10">
-      <input type="password" name="password" class="form-control" id="inputPassword3" />
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label"><%= __('Contraseña')%></label>
+      <div class="col-sm-10">
+        <input type="password" name="password" class="form-control" id="inputPassword3" />
+      </div>
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary"><%= __('Entrar')%></button>
-  <p><%= error %></p>
-</form>
+    <button type="submit" class="btn btn-primary"><%= __('Entrar')%></button>
+    <p><%= error %></p>
+  </form>
+</div>
 
 <% include footer.ejs %>
