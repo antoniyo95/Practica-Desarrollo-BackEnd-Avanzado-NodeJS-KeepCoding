@@ -1,4 +1,5 @@
 const { Usuario } = require("../models");
+const jwt = require('jsonwebtoken');
 
 class LoginController {
   index(req, res, next) {
@@ -7,6 +8,7 @@ class LoginController {
     res.render("login");
   }
 
+  // Login post desde el website
   async post(req, res, next) {
     try {
       const { email, password } = req.body;
@@ -40,6 +42,31 @@ class LoginController {
       }
       res.redirect('/');
     })
+  }
+
+  // Login post desde el API
+  async postAPI(req, res, next) {
+    try {
+      const { email, password } = req.body;
+
+      // Buscar el usuario en la BD
+      const usuario = await Usuario.findOne({ email: email });
+
+      // Si no encuentra o no coincide la contraseña >>> Error
+      if (!usuario || !(await usuario.comparePassword(password))) {
+        res.json({ error: 'invalidad credentials' });
+        return;
+      }
+      // Si existe y la contraseña coincide
+      // Crear un token JWT con el _id del usuario dentro
+      const token = await jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
+        expiresIn: '2d'
+      })
+
+      res.json({ jwt: token });
+    } catch (err) {
+      next(err);
+    }
   }
 
 }

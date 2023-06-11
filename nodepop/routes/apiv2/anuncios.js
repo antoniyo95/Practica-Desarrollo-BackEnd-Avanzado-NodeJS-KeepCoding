@@ -19,7 +19,7 @@ router.get('/fotos/:nombreArchivo', async (req, res, next) => {
 // Devuelve una lista de anuncios
 router.get('/', async (req, res, next) => {
     try {
-    
+
     // Filtros
     const filterByName = new RegExp('^' +
     req.query.nombre, "i");
