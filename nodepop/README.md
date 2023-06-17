@@ -32,6 +32,9 @@ npm run initDB
 -----------------
 ## General Info
 
+The website has been internationalized to English and Spanish. There is a language selector on the website located at the top left corner of the page.
+
+
 Application created with:
 
 ```sh
@@ -63,11 +66,28 @@ This version 2 of the API contains everything that is needed or requested in the
 With this, several queries or methods can be executed, which are the following:
 
 -----------
+```sh
+POST /apiv2/authenticate
+```
+Return a Json Web Token that will be used in the future to access the available advertisements from the API.
+
+It is a form that must be filled out, for example, using POSTMAN, which includes the following fields:
+
+email:
+password:
+
+The available emails with the API are: user@example.com & admin@example.com
+
+The available passwords with the API are: 1234 for both emails.
 
 ```sh
 GET /apiv2/anuncios
 ```
-Returns a list of ads with pagination, filters, sorting, and field selection.
+Returns a list of ads with pagination, filters, sorting, and field selection including the JWT token in a header or query string, will make the correct request (200 OK).
+
+Without a token will respond with an HTTP status code 401 and a JSON object containing error information.
+
+With an expired token will respond with an HTTP status code 401 and a JSON object containing error information.
 
 ```sh
 GET /apiv2/anuncios/tags
