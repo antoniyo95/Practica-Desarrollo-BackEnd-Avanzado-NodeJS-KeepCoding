@@ -60,7 +60,7 @@ class LoginController {
       // Si existe y la contraseña coincide
       // Crear un token JWT con el _id del usuario dentro
       const token = await jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
-        expiresIn: '1m'
+        expiresIn: '2d'
       })
 
       res.json({ jwt: token });
